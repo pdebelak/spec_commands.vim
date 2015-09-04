@@ -3,15 +3,38 @@ if !has("ruby")
   finish
 endif
 
-function RspecLine()
-  return :ruby SpecCommands.rspec_line
+function RSpecLine()
+ruby << EOF
+  VIM::command("return '#{SpecCommands.rspec_line}'")
+EOF
 endfunction
-" command! RunItermSpec :ruby ITerm.rspec
-" command! RunItermSpecLine :ruby ITerm.rspec_line
-"
-" command! RunItermSpringSpec :ruby ITerm.spring_rspec
-" command! RunItermSpringSpecLine :ruby ITerm.spring_rspec_line
 
+function RSpec()
+ruby << EOF
+  VIM::command("return '#{SpecCommands.rspec}'")
+EOF
+endfunction
+
+function SpringRSpecLine()
+ruby << EOF
+  VIM::command("return '#{SpecCommands.spring_rspec_line}'")
+EOF
+endfunction
+
+function SpringRSpec()
+ruby << EOF
+  VIM::command("return '#{SpecCommands.spring_rspec}'")
+EOF
+endfunction
+
+function Minitest()
+ruby << EOF
+  VIM::command("return '#{SpecCommands.minitest}'")
+EOF
+endfunction
+
+" most of this code was taken from https://github.com/skwp/vim-iterm-rspec.
+" Thanks, Yan!
 ruby <<EOF
 
 module SpecCommands
