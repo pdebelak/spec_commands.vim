@@ -1,3 +1,7 @@
+ruby << EOF
+def test_a_thing
+end
+EOF
 function RSpec()
   return "rspec " . CurrentFile()
 endfunction
@@ -18,10 +22,22 @@ function Minitest()
   return "ruby -Ilib:test " . CurrentFile()
 endfunction
 
+function MinitestLine()
+  return "ruby -Ilib:test " . CurrentFile() . " -n /" . CurrentTestName() . "/"
+endfunction
+
 function CurrentFile()
   return expand("%:p")
 endfunction
 
 function CurrentFileAndLine()
   return CurrentFile() . ":" . line(".")
+endfunction
+
+function CurrentTestName()
+  execute "mark `"
+  execute "normal ?^\s*def.*test.*\<CR>0"
+  let a:testname = split(getline("."))[1]
+  execute "normal ``"
+  return a:testname
 endfunction

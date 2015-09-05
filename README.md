@@ -4,11 +4,12 @@ This plugin is meant to return spec/test running strings to be used by *other* v
 
 ## Avalaible functions
 
-1. `SpringRSpecLine()`: run `spring rspec` with current file and current line
-2. `SpringRSpec()`: run `spring rspec` with current file
-3. `RSpecLine()`: run `rspec` with current file and current line
-4. `RSpec()`: run `rspec` with current file
+1. `SpringRSpec()`: run `spring rspec` with current file
+2. `SpringRSpecLine()`: run `spring rspec` with current file and current line
+3. `RSpec()`: run `rspec` with current file
+4. `RSpecLine()`: run `rspec` with current file and current line
 5. `Minitest()`: run `ruby -Ilib:test` with current file
+6. `MinitestLine()`: run `ruby -Ilib:test` with current file and closest test defined with `def test_etc...` syntax
 
 ## Example use
 
