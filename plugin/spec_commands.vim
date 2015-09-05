@@ -1,7 +1,3 @@
-ruby << EOF
-def test_a_thing
-end
-EOF
 function RSpec()
   return "rspec " . CurrentFile()
 endfunction
@@ -36,8 +32,8 @@ endfunction
 
 function CurrentTestName()
   execute "mark `"
-  execute "normal ?^\s*def.*test.*\<CR>0"
+  execute "normal! ?def test\<CR>"
   let a:testname = split(getline("."))[1]
-  execute "normal ``"
+  execute "normal! ``"
   return a:testname
 endfunction
