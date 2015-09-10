@@ -10,7 +10,7 @@ function SpringRSpec()
   return "spring rspec " . CurrentFile()
 endfunction
 
-function SpringRspecLine()
+function SpringRSpecLine()
   return "spring rspec " . CurrentFileAndLine()
 endfunction
 
