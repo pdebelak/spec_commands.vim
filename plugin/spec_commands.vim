@@ -23,11 +23,11 @@ function MinitestLine()
 endfunction
 
 function MixTestLine()
-  return "mix test " . CurrentFile()
+  return "mix test "  CurrentFileAndLine()
 endfunction
 
 function MixTest()
-  return "mix test " . CurrentFileAndLine()
+  return "mix test " . CurrentFile()
 endfunction
 
 function CurrentFile()
