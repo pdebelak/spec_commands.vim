@@ -22,6 +22,14 @@ function MinitestLine()
   return "ruby -Ilib:test " . CurrentFile() . " -n /" . CurrentTestName() . "/"
 endfunction
 
+function MixTestLine()
+  return "mix test " . CurrentFile()
+endfunction
+
+function MixTest()
+  return "mix test " . CurrentFileAndLine()
+endfunction
+
 function CurrentFile()
   return expand("%:p")
 endfunction
