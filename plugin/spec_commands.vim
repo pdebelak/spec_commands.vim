@@ -14,6 +14,14 @@ function SpringRSpecLine()
   return "spring rspec " . CurrentFileAndLine()
 endfunction
 
+function ZeusRSpec()
+  return "zeus rspec " . CurrentFile()
+endfunction
+
+function ZeusRSpecLine()
+  return "zeus rspec " . CurrentFileAndLine()
+endfunction
+
 function Minitest()
   return "ruby -Ilib:test " . CurrentFile()
 endfunction
